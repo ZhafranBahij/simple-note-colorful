@@ -16,12 +16,12 @@ class DatabaseSeeder extends Seeder
         // User::factory(10)->create();
 
         $this->call([
-            NoteSeeder::class
+            NoteSeeder::class,
         ]);
 
         User::factory()->create([
             'name' => 'kirakira4141',
-            'email' => 'kirakira4141@example.com',
+            'email' => 'kirakira4141@gmail.com',
             'password' => 'kirakira4141',
         ]);
     }

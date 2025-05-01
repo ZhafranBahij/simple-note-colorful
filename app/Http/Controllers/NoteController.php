@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Note;
 use App\Http\Requests\StoreNoteRequest;
 use App\Http\Requests\UpdateNoteRequest;
+use App\Models\Note;
 
 class NoteController extends Controller
 {
@@ -14,10 +14,10 @@ class NoteController extends Controller
     public function index()
     {
         $data = Note::query()
-                    ->latest()
-                    ->paginate(10);
+            ->latest()
+            ->paginate(10);
 
-        return view('pages.note.index', compact('data'));
+        return view('pages.note.index', ['data' => $data]);
     }
 
     /**
@@ -54,8 +54,9 @@ class NoteController extends Controller
     public function edit(Note $note)
     {
         $data = $note;
+
         // dd($data);
-        return view('pages.note.edit', compact('data'));
+        return view('pages.note.edit', ['data' => $data]);
     }
 
     /**
