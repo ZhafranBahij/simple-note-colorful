@@ -25,7 +25,6 @@
                     <form class="flex flex-col gap-2" action="{{ route('note.store') }}" method="POST">
                         @csrf
                         <label class="input w-full">
-                            Title
                             <input type="text" class="grow" placeholder="title" name="title" required value="{{ old('title') }}" />
                         </label>
                         <textarea class="textarea w-full" placeholder="description" name="description">{{old('description')}}</textarea>

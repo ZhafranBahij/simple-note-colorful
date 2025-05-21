@@ -45,7 +45,9 @@ class NoteController extends Controller
      */
     public function show(Note $note)
     {
-        //
+        $data = $note;
+
+        return view('pages.note.show', ['data' => $data]);
     }
 
     /**
@@ -55,7 +57,6 @@ class NoteController extends Controller
     {
         $data = $note;
 
-        // dd($data);
         return view('pages.note.edit', ['data' => $data]);
     }
 

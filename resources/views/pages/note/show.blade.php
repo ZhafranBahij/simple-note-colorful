@@ -26,9 +26,9 @@
                         @csrf
                         @method('PUT')
                         <label class="input w-full">
-                            <input type="text" class="grow" placeholder="title" name="title" required value="{{ old('title') ?? $data->title }}" />
+                            <input type="text" class="grow" placeholder="title" name="title" required value="{{ old('title') ?? $data->title }}" disabled />
                         </label>
-                        <textarea class="textarea w-full" placeholder="description" name="description">{{ old('description') ?? $data->description }}</textarea>
+                        <textarea class="textarea w-full" placeholder="description" name="description" disabled>{{ old('description') ?? $data->description }}</textarea>
 
                         <div>
                             <a href="{{ route('note.index') }}" class="btn btn-secondary">Back</a>

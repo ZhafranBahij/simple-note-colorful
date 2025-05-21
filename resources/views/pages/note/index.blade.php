@@ -35,12 +35,19 @@
                                 <tr>
                                     <th>{{ $item->id }}</th>
                                     <td class="flex gap-2">
-                                        <a href="{{ route('note.edit', $item->id) }}" class="btn btn-sm btn-secondary">Edit</a>
+                                        <a href="{{ route('note.show', $item->id) }}" class="btn btn-info btn-sm">
+                                            <i class="fas fa-eye"></i>
+                                        </a>
+                                        <a href="{{ route('note.edit', $item->id) }}" class="btn btn-secondary btn-sm">
+                                            <i class="fas fa-edit"></i>
+                                        </a>
                                         <form action="{{ route('note.destroy', $item->id) }}" method="POST" class="inline-block">
                                             @csrf
                                             @method('DELETE')
-                                            <button type="submit" class="btn btn-sm btn-error">Delete</button>
-                                        </form> 
+                                            <button type="submit" class="btn btn-error btn-sm" onclick="return confirm('Are you sure?')">
+                                                <i class="fas fa-trash"></i>
+                                            </button>
+                                        </form>
                                     </td>
                                     <td>{{ $item->title }}</td>
                                     <td>{{ $item->description }}</td>
